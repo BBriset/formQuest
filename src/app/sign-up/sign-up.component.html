@@ -40,7 +40,7 @@
     />
   </fieldset>
   <div *ngIf="lastname.errors && myForm.submitted">
-    <span *ngIf="lastname.errors && lastname.errors?.['required']"
+    <span *ngIf="lastname.errors?.['required']"
       >Le {{ lastname.name }} est requis</span
     >
 
