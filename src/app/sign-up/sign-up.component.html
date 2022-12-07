@@ -13,7 +13,9 @@
     />
   </fieldset>
   <div *ngIf="firstname.errors && myForm.submitted">
-    <span *ngIf="firstname.errors?.['required']">Le titre est requis</span>
+    <span *ngIf="firstname.errors?.['required']"
+      >Le {{ firstname.name }} est requis</span
+    >
 
     <span *ngIf="firstname.errors?.['minlength']"
       >Le {{ firstname.name }} doit comporter au moins 3 caractères.</span
@@ -39,7 +41,7 @@
   </fieldset>
   <div *ngIf="lastname.errors && myForm.submitted">
     <span *ngIf="lastname.errors && lastname.errors?.['required']"
-      >Le titre est requis</span
+      >Le {{ lastname.name }} est requis</span
     >
 
     <span *ngIf="lastname.errors?.['minlength']"
@@ -47,7 +49,7 @@
     >
 
     <span *ngIf="lastname.errors?.['maxlength']"
-      >Le #{{ lastname.name }} ne doit pas dépasser 15 caractères.</span
+      >Le {{ lastname.name }} ne doit pas dépasser 15 caractères.</span
     >
   </div>
   <fieldset>
@@ -64,10 +66,12 @@
     />
   </fieldset>
   <div *ngIf="email.errors && myForm.submitted">
-    <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
+    <span *ngIf="email.errors?.['required']"
+      >Le champ {{ email.name }} est requis</span
+    >
 
     <span *ngIf="email.errors?.['email']"
-      >L'adresse email doit être valide</span
+      >L'adresse {{ email.name }} doit être valide</span
     >
   </div>
   <button type="reset">Restaurer</button>
